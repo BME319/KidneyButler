@@ -2,7 +2,7 @@
 
   <ion-nav-bar class="bar-positive green-bg" align-title="center">
     <ion-nav-buttons side="left">
-      <button class="button button-icon icon ion-ios-arrow-left fc-ff"  ng-if="CanBack()" ng-click="Goback()">返回</button>
+      <button class="button button-icon icon ion-ios-arrow-left fc-ff" ng-click="$ionicGoBack()"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
             <button class="button button-clear"  ng-if="!canEdit"  ng-click="edit() "><i class="icon ion-edit"></i></button>
@@ -11,7 +11,7 @@
 
 
   <!-- <div  style="position: absolute;top: 43px;z-index:100;display: block;height: 2.5px;background-color: #33cd5f;{{barwidth}}" ></div> -->
-        <ion-content padding="true" style="">
+        <ion-content style="">
             <form name="userForm" nonvalidate>
             <label class="item item-input">
                 <i class="icon ion-asterisk" style="color:red;font-size:8px"></i><span class="input-label">姓名</span>
@@ -165,7 +165,7 @@
         </form>
 
         <div ng-if="canEdit">
-            <button  ng-disabled="!(userForm.$valid)" style="margin-top:10px" class="button button-block green-bg font-white" ng-click ="infoSetup(User)">
+            <button  ng-disabled="!(userForm.$valid)" style="margin:20px auto;width: 80%" class="button button-block green-bg font-white" ng-click ="infoSetup(User)">
                         保存
             </button>
         </div>
