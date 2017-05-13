@@ -1,52 +1,52 @@
 <ion-view cache-view="false" title="我的医生" show-tabs>
 
-  
+
 
 
   <!-- <div  style="position: absolute;top: 43px;z-index:100;display: block;height: 2.5px;background-color: #33cd5f;{{barwidth}}" ></div> -->
-  <ion-content padding="true" style="">
+  <ion-content  style="">
 
-    <div class="card" ng-click="getDoctorDetail($event,doctor.userId)" ng-if="hasDoctor">
+    <ion-list>
+      <ion-item class="item-thumbnail-left" ng-click="getDoctorDetail($event,doctor.userId)">
+        <img style="border-radius: 100%;top: 50%;margin-top: -40px" ng-src="{{doctor.photoUrl  || 'img/doctor3.PNG'}}">
+        <span style="font-weight: bold">{{doctor.name}}</span>
+        <span style="float: right">{{doctor.department}}</span>
+        <p>{{doctor.workUnit}}  {{doctor.title}}</p>
+        <p style="font-size: 12px">擅长：{{doctor.major}}</p>
+        <p style="font-size: 12px">收费：<span>咨询{{doctor.charge1}}元一答</span><span style="margin-left: 10px">问诊{{doctor.charge2}}元一次</span></p>
+        <div class="row" style="font-size: 14px">
+          <div class="col"><span class="font-c">评&nbsp;&nbsp;&nbsp;&nbsp;分：&nbsp;{{doctor.score}}</span></div>
+          <div class="col" ><span  class="font-c">咨询量：{{doctor.count1}}</span></div>
+          <div class="col" > <span class="font-c">问诊量：{{doctor.count2}}</span></div>
 
-        <div class="item item-avatar"> 
-            <img ng-src="{{doctor.photoUrl  || 'img/doctor3.PNG'}}">
-            <span>{{doctor.name}}</span>
-            <span style="float: right">{{doctor.department}}</span>
-            <p>医院：{{doctor.workUnit}}</p>
-            <p style="font-size: 12px">职称:{{doctor.title}}</p>
-            <p style="font-size: 12px">收费：<span>咨询{{doctor.charge1}}元</span><span style="margin-left: 20px">问诊{{doctor.charge2}}元</span></p>
-            <div class="row row-below-avatar" style="font-size: 12px;color:#2B67F5;">
-                <span class="col"><i class="icon ion-star"></i>{{doctor.score.toFixed(2)||"无"}}</span>
-                <span class="col">咨询量：{{doctor.count1}}</span>
-                <span class="col">问诊量：{{doctor.count2}}</span>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-40"></div>
+          <div class="col icon-c"><span><i class="icon iconfont icon-zixun2"  style="vertical-align: middle;margin-right: 5px"></i>咨询</span></div>
+          <div class="col icon-c" ><span><i class="icon iconfont icon-baojifuben"  style="vertical-align: middle;margin-right: 5px"></i>问诊</span></div>
         </div>
 
-        <div class="row" style="color:#181544;font-size:14px;font-weight:bold;text-align: center;">
-            <span class="col"><i class="icon iconfont icon-zixun2"></i>咨询</span>
-            <span class="col"><i class="icon iconfont icon-baojifuben""></i>问诊</span>
-        </div>
-
-    </div>
+      </ion-item>
+    </ion-list>
 
 
-    
+
 
     <div>
-         <button style="margin-top:10px" class="button button-block green-bg font-white" ng-click ="allDoctors()">
-            更多医生
-        </button>
 
+      <button style="margin:10px auto;width: 80%" class="button button-block button-balanced green-bg" ng-click ="allDoctors()">
+        更多医生
+      </button>
     </div>
-      
 
 
-    
-    
-    
 
 
-           
+
+
+
+
+
   </ion-content>
-          
+
 </ion-view>
