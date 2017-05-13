@@ -20,7 +20,7 @@
         </div>
         <span class="row" style="margin-left:5px;">{{pay.description}}</span>
       </ion-item>
-     
+
       <!-- 警报消息 -->
       <ion-item class="item item-avatar card" ng-if="alert"  ng-click="getMessageDetail(alert)">
         <img ng-src="img/alert.png" image-red-point="!alert.readOrNot">
@@ -31,7 +31,7 @@
         <span class="row" style="margin-left:5px;">{{alert.description}}</span>
       </ion-item>
 
-      
+
       <!-- 任务消息 -->
       <ion-item class="item item-avatar card" ng-if="task" ng-click="getMessageDetail(task)">
         <img ng-src="img/task.png" image-red-point="!task.readOrNot">
@@ -41,7 +41,7 @@
         </div>
         <span class="row" style="margin-left:5px;">{{task.description}}</span>
       </ion-item>
-     
+
       <!-- 保险消息 -->
       <ion-item class="item item-avatar card" ng-if="insurance" ng-click="getMessageDetail(insurance)">
         <img ng-src="img/security.png" image-red-point="!insurance.readOrNot">
@@ -51,7 +51,7 @@
         </div>
         <span class="row" style="margin-left:5px;">{{insurance.description}}</span>
       </ion-item>
-      
+
       <!-- 聊天消息 -->
       <ion-item  ng-repeat="chat in chats"  class="item item-avatar card" ng-click="getConsultRecordDetail(chat)">
         <img ng-src="{{chat.docPhoto}}" image-red-point="!chat.readOrNot">
@@ -61,6 +61,34 @@
         </div>
         <span class="row" style="margin-left:5px;">{{chat.description}}</span>
       </ion-item>
+    <!--小红点在前面-->
+      <!--<ion-item class="item item-avatar right new-message" ng-click="getMessageDetail('ZF')">
+        <img src="/img/icon_paymessage.png">
+        <h2>支付消息</h2>
+        <p>[{{messages.ZF.values.length}}条]你有新的支付消息请注意查收</p>
+      </ion-item>
+      <ion-item class="item item-avatar right " ng-click="getMessageDetail('JB')">
+        <img src="/img/icon_warning.png">
+        <h2>警报消息</h2>
+        <p>[{{messages.JB.values.length}}条]你有新的支付消息请注意查收</p>
+      </ion-item>
+      <ion-item class="item item-avatar right " ng-click="getMessageDetail('RW')">
+        <img src="/img/icon_renwu.png">
+        <h2>待做任务</h2>
+        <p>[{{messages.RW.values.length}}条]你有新的支付消息请注意查收</p>
+      </ion-item>
+      <ion-item class="item item-avatar right " ng-click="getMessageDetail('BX')">
+        <img src="/img/icon_renwu.png">
+        <h2>保险消息</h2>
+        <p>[{{messages.BX.values.length}}条]你有新的支付消息请注意查收</p>
+      </ion-item>
+      <ion-item ng-repeat="consult in messages.LT.values" class="item item-avatar" ng-click="getConsultRecordDetail()">
+
+        <img ng-src="{{consult.img}}">
+        <div><span>{{consult.title}}</span><span style="float: right">{{consult.time|dateFormat:"MM-DD"}}</span></div>
+        <p style="white-space:normal;margin-top: 10px">{{consult.description}}</p>
+      </ion-item>-->
+
 
 
     </ion-list>

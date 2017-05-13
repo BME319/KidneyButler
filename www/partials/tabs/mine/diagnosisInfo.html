@@ -1,13 +1,15 @@
 <ion-view cache-view="false" title="诊断信息" >
 
   <!-- <ion-nav-bar class="bar-dark nav-title-slide-ios7" style="" > -->
-      <ion-nav-buttons class="bar-dark nav-title-slide-ios7" side="left" >
-         <button class="button button-clear"  ng-click="Goback()"><i class="icon ion-chevron-left"></i>返回</button>
-      </ion-nav-buttons>
+  <ion-nav-bar class="bar-positive green-bg" align-title="center">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-ios-arrow-left fc-ff" ng-click="$ionicGoBack()"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
     <!-- </ion-nav-bar> -->
 
 
-  <ion-content padding="true" style="">
+  <ion-content  style="">
 
     <ion-list>
       <ion-item ng-repeat="diagnosis in Diags" class="item-text-wrap" ng-click="">
@@ -15,7 +17,7 @@
             <h2 class="col" style="color: #181544;font-weight: bold">{{diagnosis.doctor.name}}</h2>
             <p class="col" style="color: #181544;font-size:12px;text-align:right">{{diagnosis.time|dateFormat:"YYYY-MM-DD"}}</p>
         </div>
-  
+
         <div class="row">
             <div class="col">肾病类型</div>
             <select style="float: right;" class="col" ng-disabled="true" ng-model="diagnosis.name" ng-options=" Disease.typeName for Disease in Diseases track by Disease.type">
@@ -46,17 +48,17 @@
             <p class="col" style="text-align:right;width:50%">{{diagnosis.content||"未诊断"}}</p>
         </div>
 
-        
+
       </ion-item>
     </ion-list>
     <ion-refresher pulling-text="下拉刷新..." on-refresh="do_refresher()"></ion-refresher>
-    
-    
-    
-    
 
 
-           
+
+
+
+
+
   </ion-content>
-          
+
 </ion-view>
