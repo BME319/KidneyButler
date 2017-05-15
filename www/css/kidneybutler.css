@@ -5,13 +5,31 @@
 .popup-buttons{
   min-height: 55px!important;
 }
-.button.button-positive{
-  background: #6ac4f8 !important;
-}
-.popup-buttons .button{
+/*.popup-buttons .button{
+  margin-right: 80px!important;
+  min-height: 35px!important;
+}*/
+.button-positive2{
   margin-right: 80px!important;
   min-height: 35px!important;
 }
+.button-positive3{
+  height: 35px!important;
+  min-height: 35px!important;
+  line-height: 35px!important;
+  width: 50%;
+  border: 0;
+  padding: 0!important;
+  margin: 0!important;
+}
+.button-positive3.button:after{
+  position: inherit!important;
+}
+.btn-sure{
+  background: #6ac4f8!important;
+  color: #fff!important;
+}
+
 .popup-buttons .button:last-child{
   margin-right: 0!important;
 }
