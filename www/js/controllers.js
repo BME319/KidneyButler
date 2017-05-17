@@ -1019,14 +1019,14 @@ angular.module('kidney.controllers', ['ionic','kidney.services','ngResource','io
                               }
                             ]
                           });
-                    
+
 
                 }
 
-    
+
 
   }
-        
+
 
 
 
@@ -1064,7 +1064,7 @@ angular.module('kidney.controllers', ['ionic','kidney.services','ngResource','io
     if(Storage.get('isSignIn')=='Yes'){
       RefreshUnread = $interval(GetUnread,2000);
     }
-    
+
     //获取二维码信息
 
 
@@ -1927,10 +1927,12 @@ angular.module('kidney.controllers', ['ionic','kidney.services','ngResource','io
          title: PopInfo.word,
          scope: $scope,
          buttons: [
-           { text: '取消' },
+           { text: '取消',
+             type: 'button-positive2 ',
+           },
            {
              text: '保存',
-             type: 'button-positive',
+             type: 'button-positive2 btn-sure',
              onTap: function(e) {
                if(PopInfo.flag == 'InputBP')
                {
@@ -2127,10 +2129,12 @@ angular.module('kidney.controllers', ['ionic','kidney.services','ngResource','io
          title: word,
          scope: $scope,
          buttons: [
-           { text: '取消' },
+           { text: '取消',
+             type: 'button-positive3',
+           },
            {
              text: '保存',
-             type: 'button-positive',
+             type: 'button-positive3 btn-sure',
              onTap: function(e) {
                if (!$scope.data.value)
                {
@@ -2198,10 +2202,12 @@ angular.module('kidney.controllers', ['ionic','kidney.services','ngResource','io
            title: word,
            scope: $scope,
            buttons: [
-             { text: '取消' },
+             { text: '取消',
+               type: 'button-positive3 '
+             },
              {
                text: '保存',
-               type: 'button-positive',
+               type: 'button-positive3 btn-sure',
                onTap: function(e) {
                  if (!$scope.data.value)
                  {
@@ -3209,7 +3215,7 @@ angular.module('kidney.controllers', ['ionic','kidney.services','ngResource','io
   //       console.log(err);
   //     }
   //   )}
-    
+
 
 
     var RefreshDiagnosisInfo = function(){
@@ -4465,7 +4471,7 @@ angular.module('kidney.controllers', ['ionic','kidney.services','ngResource','io
   },function(err){
     console.log(err);
   })
-  
+
  $scope.$on('$ionicView.enter', function() {
       LoadMyAccount();
   })
@@ -6003,6 +6009,14 @@ angular.module('kidney.controllers', ['ionic','kidney.services','ngResource','io
       title: '删除提示',
       template: '记录删除后将无法恢复，确认删除？',
       cancelText:'取消',
+        buttons: [
+          { text: '取消',
+            type: 'button-positive3 ',
+          },
+          {
+            text: '删除',
+            type: 'button-positive3 btn-sure'}
+            ],
       okText:'删除'
       });
 
