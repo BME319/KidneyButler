@@ -7703,6 +7703,16 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
   $scope.moredata = true
   var pagecontrol = {skip: 0, limit: 4}
 
+  var myposts = []
+  $scope.posts1 = []
+  $scope.moredata1 = true
+  var pagecontrol1 = {skip: 0, limit: 4}
+
+  var mycollection = []
+  $scope.posts2 = []
+  $scope.moredata2 = true
+  var pagecontrol2 = {skip: 0, limit: 4}
+
 $scope.initial={
     item:""
  }
@@ -7719,17 +7729,17 @@ $scope.initial={
     $scope.params.allposts = false
     $scope.params.myposts = true
     $scope.params.mycollection = false
-    getmyposts()
+    $scope.loadMore1()
   }
   // 点亮我的收藏标签 显示我的收藏
   $scope.Showmycollection = function () {
     $scope.params.allposts = false
     $scope.params.myposts = false
     $scope.params.mycollection = true
-    getmycollection()
+    $scope.loadMore2()
   }
 /**
-   * [获取该患者所有帖子列表]
+   * [获取该患者三种帖子列表]
    * @Author   WZX
    * @DateTime 2017-08-03
    */
@@ -7752,28 +7762,51 @@ $scope.initial={
       console.log(err)
     })
   }
+  
+  $scope.loadMore1 = function () {
+    Forum.myposts({token: Storage.get('TOKEN'), skip: pagecontrol1.skip, limit: pagecontrol1.limit}).then(function (data) {
+      console.log(data)
+     $scope.$broadcast('scroll.infiniteScrollComplete')
+     myposts = myposts.concat(data.data.results)
+     $scope.posts1 = myposts
+     if (myposts.length == 0) {
+        console.log('aaa')
+        $ionicLoading.show({
+          template: '没有帖子', duration: 1000
+        })
+      }
+     var skiploc = data.data.nexturl.indexOf('skip')
+      pagecontrol1.skip = data.data.nexturl.substring(skiploc + 5)
+      if (data.data.results.length < pagecontrol1.limit) { $scope.moredata1 = false } else { $scope.moredata1 = true };
+    }, function (err) { 
+      console.log(err)
+    })
+  }
 
+  $scope.loadMore2 = function () {
+    Forum.mycollection({token: Storage.get('TOKEN'), skip: pagecontrol2.skip, limit: pagecontrol2.limit}).then(function (data) {
+      console.log(data)
+     $scope.$broadcast('scroll.infiniteScrollComplete')
+     mycollection = mycollection.concat(data.data.results)
+     $scope.posts2 = mycollection
+     if (mycollection.length == 0) {
+        console.log('aaa')
+        $ionicLoading.show({
+          template: '没有帖子', duration: 1000
+        })
+      }
+     var skiploc = data.data.nexturl.indexOf('skip')
+      pagecontrol2.skip = data.data.nexturl.substring(skiploc + 5)
+      if (data.data.results.length < pagecontrol2.limit) { $scope.moredata2 = false } else { $scope.moredata2 = true };
+    }, function (err) { 
+      console.log(err)
+    })
+  }
+  
   $scope.myStyle=[
     {'color':'gray'},
     {'color':'DodgerBlue'}
   ]
-
-   var getmycollection = function () {
-    Forum.mycollection({token: Storage.get('TOKEN'),limit:10,skip:0}).then(function (data) {
-      console.log(data)
-     $scope.mycollection = data.data.results
-    }, function (err) {
-      console.log(err)
-    })
-  }
-  var getmyposts = function () {
-    Forum.myposts({token: Storage.get('TOKEN'),limit:10,skip:0}).then(function (data) {
-      console.log(data)
-     $scope.myposts = data.data.results
-    }, function (err) {
-      console.log(err)
-    })
-  }
 
   $scope.changefavoritestatus = function (tip) {
     console.log(tip)
@@ -7810,7 +7843,9 @@ $scope.initial={
         if (res) {
           Forum.deletepost({token: Storage.get('TOKEN'),postId: tip}).then(function (data) {
           console.log(data)
-          getmyposts()
+          pagecontrol1 = {skip: 0, limit: 4},
+          myposts = []
+          $scope.loadMore1()
           pagecontrol = {skip: 0, limit: 4},
           allposts = []
           console.log(allposts)
@@ -7844,7 +7879,7 @@ $scope.initial={
     Forum.allposts({
       token: Storage.get('TOKEN'),
       title: $scope.search.title,
-      limit:15,
+      limit:1000,
       skip:0
     }).then(function (data) {
       // $scope.params.isPatients=true;
