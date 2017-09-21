@@ -1,4 +1,4 @@
-/* Empty. Add your own CSS if you like */
+me-top-bg/* Empty. Add your own CSS if you like */
 .mt-40 {
   margin-top: 40px !important;
 }
@@ -89,8 +89,7 @@ display: inline-block;
   border-radius: 5px;
   margin-top: 10px;
 }*/
-.bar-header {
-
+.bar-myheader {
 border: 0px !important;
 border-bottom-color: transparent !important;
 
@@ -98,6 +97,7 @@ background-image: none !important;
 
 border-bottom: none !important;
 }
+
 /*筛选*/
 .checkbox input, .checkbox-icon{
   width: 18px;
@@ -1093,6 +1093,16 @@ border-bottom: none !important;
   background-color: red
 }
 
+.blue-round-input {
+  border:1px solid #6ac4f8;
+  border-radius: 5px;
+  margin-top: 10px
+}
+
+.padding10 {
+  padding: 10px 10px 10px 10px !important;
+}
+
 .no-line{
   background-color:transparent !important;
   background-image: none !important;
@@ -1134,13 +1144,222 @@ input.hasTick {
   text-align: center;
   position:absolute;
   left: 0px;
-  top: 75%;
+  top: 76%;
+  padding-top: 0px;
+  background-color: transparent;
 }
 
 
 textarea {
   resize: none;
 }
+
+button.doctorBtn{
+  width:50%;
+  border-color: #ddd;
+  color: #444;
+  height: 30px;
+  font-size:14px;
+   /*font-weight:bold; */
+  margin: 1px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: transparent;
+  border-width: thin;
+  border-style: solid;
+}
+button.docDetailBtn{
+  width:25%;
+  border:white;
+  background-color: white;
+}
+button.displayBtn{
+  width:100%;
+  border-color: #ddd;
+  color: #444;
+  height: 42px;
+  font-size:16px;
+  margin: 3px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: transparent;
+  border-width: thin;
+  border-style: double;
+}
+button.displayBtn2{
+  width: 100%;
+  border-color: #ddd;
+  color: rgb(255, 255, 255);
+  height: 42px;
+  font-size: 16px;
+   /* margin: 3px; */
+  border-radius: 28px;
+  text-align: center;
+  background-color: #6ac4f8;
+  border-width: thin;
+  border-style: double;
+}
+button.displayBtn3{
+  width: 49%;
+  border-color: #fff;
+  color: #6ac4f8;
+  height: 42px;
+  font-size: 16px;
+  /* margin: 3px; */
+  border-radius: 28px;
+  text-align: center;
+  background-color: #ffffff;
+  border-width: thin;
+  border-style: double;
+}
+p.tag{
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 4px;
+}
+p.left{
+  margin-bottom: 4px;
+}
+
+button.tag{
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #6ac4f8;
+  position: absolute;
+  bottom: 10px;
+  width: 85%;
+  border:1px none #fff;
+  /*line-height: 40px;*/
+}
+
+button.doctorBtn2{
+  width:50%;
+  border-color: #ddd;
+  color: #6ac4f8;
+  height: 30px;
+  font-size:14px;
+   /*font-weight:bold; */
+  margin: 1px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: transparent;
+  border-width: thin;
+  border-style: solid;
+}
+
+button.doctorBtn3{
+  width:44%;
+  border-color: #ddd;
+  color: #444;
+  height: 30px;
+  font-size:14px;
+   /*font-weight:bold; */
+  margin: 1px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: transparent;
+  border-width: thin;
+  border-style: solid;
+}
+
+
+button.doctorBtn4{
+  width:10%;
+  border-color: #ddd;
+  color: #444;
+  height: 30px;
+  font-size:14px;
+   /*font-weight:bold; */
+  margin: 1px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: transparent;
+  border-width: thin;
+  border-style: solid;
+}
+
+button.doctorBtn5{
+  width:44%;
+  border-color: #ddd;
+  color: #6ac4f8;
+  height: 30px;
+  font-size:14px;
+   /*font-weight:bold; */
+  margin: 1px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: transparent;
+  border-width: thin;
+  border-style: solid;
+}
+
+button.topbutton{
+  width:50%;
+  background: white;
+  border-radius: 7px;
+  height: 32px;
+  border: 1px solid #ddd;
+}
+
+button.doctorBtn:disabled{
+  background-color: #ddd;
+  font-weight:normal;
+  color:#F8FCFB;
+  border-color:  #ddd;
+}
+button.doctorBtn3:disabled{
+  background-color: #ddd;
+  font-weight:normal;
+  color:#F8FCFB;
+  border-color:  #ddd;
+}
+button.seasonBtn{
+  width:25%;
+  border-color: #ddd;
+  color: #444;
+  height: 30px;
+  font-size:14px;
+  margin: 1px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: transparent;
+  border-width: thin;
+  border-style: solid;
+}
+button.seasonBtn2{
+  width:33%;
+  border-color: #FFF;
+  color: #444;
+  height: 30px;
+  font-size:15px;
+  margin: 1px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: transparent;
+  border-width: thin;
+  border-style: solid;
+}
+button.textBtn{
+  width:95%;
+  border-color: #FFF;
+  color: #444;
+  height: 30px;
+  font-size:15px;
+  margin: 1px;
+  border-radius: 2px;
+  text-align: center;
+  background-color: transparent;
+  border-width: thin;
+  border-style: solid;
+}
+
+
+
+
+
+
 
 .item-select-custom {
   position: relative; }
@@ -1223,5 +1442,61 @@ textarea {
     color: #fff; }
   .item-select-custom.item-dark:after, .item-select-custom.item-dark .input-label {
     color: #fff; }
+.popupWithKeyboard{
+  margin-top: -190px;
+}
 
+.ionic_ratings .icon{
+  font-size: 20px;
+}
+.commentStyle{
+ font-size: 10px; 
+}
 
+.scroll-left {
+ height: 50px;  
+ overflow: hidden;
+ text-overflow: ellipsis ;
+ position: relative;
+ background: transparent;
+ color: orange;
+ border: 1px none orange;
+}
+.scroll-left p {
+ position: absolute;
+ min-width: 100%;
+ width: 200%;
+ height: 100%;
+ margin: 0;
+ line-height: 35px;
+ text-align: left;
+ /* Starting position */
+ -moz-transform:translateX(-100%);
+ -webkit-transform:translateX(-100%);  
+ transform:translateX(-100%);
+ /* Apply animation to this element */  
+ -moz-animation: scroll-left 15s linear infinite;
+ -webkit-animation: scroll-left 15s linear infinite;
+ animation: scroll-left 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-left {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-left {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Browser bug fix */
+ -webkit-transform: translateX(100%); /* Browser bug fix */
+ transform: translateX(100%);     
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Browser bug fix */
+ -webkit-transform: translateX(-100%); /* Browser bug fix */
+ transform: translateX(-100%); 
+ }
+}

@@ -1,8 +1,8 @@
 <ion-view cache-view="false" title="咨询记录" hide-tabs>
 
-      <ion-nav-buttons side="left">
-            <my-nav-back-button ng-click="Goback()"></my-nav-back-button>
-      </ion-nav-buttons>
+  <ion-nav-buttons side="left">
+    <my-nav-back-button ng-click="$ionicGoBack()"></my-nav-back-button>
+  </ion-nav-buttons>
 
 
   <!-- <div  style="position: absolute;top: 43px;z-index:100;display: block;height: 2.5px;background-color: #33cd5f;{{barwidth}}" ></div> -->
@@ -10,7 +10,7 @@
 
     <div>
         <a  class="item item-avatar context-pading m-b5 br-none fc-4c" ng-repeat="item in items |orderBy:['readOrNot','-lastMsgDate']" class="item item-avatar" ng-click="getConsultRecordDetail($event,item.userId)">
-            <img  ng-src="{{item.photoUrl || 'img/DefaultAvatar.jpg'}} " image-red-point="!item.readOrNot">
+            <img  ng-src="{{item.photoUrl || 'img/DefaultAvatar.jpg'}} " image-red-point="item.readOrNot==0">
             <div class="row">
                 <h2 class="col">{{item.name}}</h2>
                 <span class="col">{{item.lastMsgDate|dateFormat:"YYYY-MM-DD h:m"}}</span>
