@@ -1630,6 +1630,13 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
 
 // 任务列表--GL
 .controller('tasklistCtrl', ['$interval', 'News', 'otherTask', '$scope', '$timeout', '$state', 'Storage', '$ionicHistory', '$ionicPopup', '$ionicModal', 'Compliance', '$window', 'Task', 'Patient', 'VitalSign', '$ionicLoading', function ($interval, News, otherTask, $scope, $timeout, $state, Storage, $ionicHistory, $ionicPopup, $ionicModal, Compliance, $window, Task, Patient, VitalSign, $ionicLoading) {
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?573a255b86bf98e8370885d55d65d79d";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
   $scope.goinsurance = function () {
     $state.go('insurance')
   }
@@ -3747,6 +3754,13 @@ angular.module('kidney.controllers', ['ionic', 'kidney.services', 'ngResource', 
 }])
 // 咨询记录--PXY
 .controller('ConsultRecordCtrl', ['News', 'Patient', 'Storage', '$scope', '$state', '$ionicHistory', '$ionicLoading', '$ionicPopover', 'Counsels', '$ionicPopup', '$rootScope', function (News, Patient, Storage, $scope, $state, $ionicHistory, $ionicLoading, $ionicPopover, Counsels, $ionicPopup, $rootScope) {
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?289aee6e14d6d6c4b0fa1e4d567cab27";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
   $scope.Goback = function(){
     $state.go('tab.myDoctors')
   }
